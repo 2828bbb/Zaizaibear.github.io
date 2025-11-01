@@ -1,41 +1,55 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>自我介绍</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="min-h-screen bg-gradient-to-br from-blue-50 to-purple-100 flex items-center justify-center p-6">
-  <div class="max-w-md bg-white rounded-2xl shadow-lg p-6 text-center">
-    <!-- 头像 -->
-    <img 
-      src="Camera_1040g3k031o7oo7u7lm605pt4esi2nv2l5lajmco.jpg" 
-      alt="我的头像" 
-      class="w-32 h-32 rounded-full mx-auto shadow-md border-4 border-white -mt-20 transform hover:scale-105 transition-transform duration-300"
-    />
+export default function XiaoXiongProfile(): JSX.Element {
+  return (
+    <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: 32, background: "linear-gradient(135deg,#ffffff 0%,#f0f9f4 50%,#ecfdf5 100%)" }}>
+      <article style={{ width: "100%", maxWidth: 900, background: "#ffffff", borderRadius: 16, boxShadow: "0 6px 30px rgba(2,6,23,0.08)", display: "grid", gridTemplateColumns: "260px 1fr", gap: 28, padding: 28 }}>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <div style={{ width: 220, height: 220, borderRadius: 14, overflow: "hidden", flexShrink: 0, border: "6px solid #fff", boxShadow: "0 6px 20px rgba(16,185,129,0.08)", background: "linear-gradient(180deg,#e6fffa,#f0fff4)" }}>
+            {/* 使用相对路径或 public 目录路径，根据你的项目结构调整 */}
+            <img src="/Camera_1040g3k031o7oo7u7lm605pt4esi2nv2l5lajmco.jpg" alt="头像 - 熊" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+          </div>
 
-    <!-- 姓名 -->
-    <h1 class="text-2xl font-bold mt-6 mb-2 text-gray-800">你好，我是张三</h1>
-    
-    <!-- 简介 -->
-    <p class="text-gray-600 mb-4 leading-relaxed">
-      我是一名前端开发者，喜欢设计简洁优雅的网页界面。热爱学习新技术，
-      目前专注于 React、Tailwind CSS 和网页动画的开发。
-    </p>
+          <h2 style={{ marginTop: 12, fontSize: 22, fontWeight: 700 }}>你好，我是熊。</h2>
+          <p style={{ marginTop: 8, color: "#6b7280" }}>小熊必出心平气和！</p>
+        </div>
 
-    <!-- 联系信息 -->
-    <div class="mt-4 space-x-4">
-      <a href="mailto:example@email.com" class="text-blue-500 hover:text-blue-700 font-medium">
-        📧 邮箱
-      </a>
-      <a href="https://github.com/yourname" target="_blank" class="text-gray-700 hover:text-black font-medium">
-        💻 GitHub
-      </a>
-      <a href="https://www.linkedin.com/in/yourname" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">
-        🔗 LinkedIn
-      </a>
+        <div>
+          <h1 style={{ margin: 0, marginBottom: 12, fontSize: 26 }}>自我介绍</h1>
+          <p style={{ fontSize: 15, color: "#0f172a", marginBottom: 14 }}>
+            你好，欢迎来到我的小角落。我是熊，喜欢简单、温和且专注地做事。我享受读书、绘画、短途旅行以及用心制作小作品。对我来说，生活里的小确幸常常来自认真做一件小事。
+          </p>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 12, marginTop: 8 }}>
+            <div style={{ padding: 10, borderRadius: 10, border: "1px solid #eef2f7", background: "#fbfdfc" }}>
+              <strong>风格</strong>
+              <div style={{ color: "#6b7280", marginTop: 6 }}>平和、有耐心、愿意倾听。</div>
+            </div>
+
+            <div style={{ padding: 10, borderRadius: 10, border: "1px solid #eef2f7", background: "#fbfdfc" }}>
+              <strong>爱好</strong>
+              <div style={{ color: "#6b7280", marginTop: 6 }}>读书、手作、散步与普普通通的咖啡时光。</div>
+            </div>
+
+            <div style={{ padding: 10, borderRadius: 10, border: "1px solid #eef2f7", background: "#fbfdfc" }}>
+              <strong>技能</strong>
+              <div style={{ color: "#6b7280", marginTop: 6 }}>基础前端、页面排版、视觉设计感知。</div>
+            </div>
+
+            <div style={{ padding: 10, borderRadius: 10, border: "1px solid #eef2f7", background: "#fbfdfc" }}>
+              <strong>愿景</strong>
+              <div style={{ color: "#6b7280", marginTop: 6 }}>把生活过成喜欢的样子，并把温和传递给别人。</div>
+            </div>
+          </div>
+
+          <div style={{ display: "flex", gap: 10, marginTop: 18 }}>
+            <a href="#contact" style={{ padding: "10px 14px", borderRadius: 999, textDecoration: "none", fontWeight: 600, border: "1px solid rgba(15,23,42,0.06)", background: "#10b981", color: "#fff" }}>联系我</a>
+            <a href="#more" style={{ padding: "10px 14px", borderRadius: 999, textDecoration: "none", fontWeight: 600, border: "1px solid rgba(15,23,42,0.06)" }}>了解更多</a>
+          </div>
+
+          <p style={{ gridColumn: "1/-1", textAlign: "center", color: "#94a3b8", fontSize: 13, marginTop: 12 }}>
+            将头像文件放在 public 或与站点静态根目录相同的位置，文件名为 <code>Camera_1040g3k031o7oo7u7lm605pt4esi2nv2l5lajmco.jpg</code>
+          </p>
+        </div>
+      </article>
     </div>
-  </div>
-</body>
-</html>
+  );
+}
