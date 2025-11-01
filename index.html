@@ -1,3 +1,13 @@
+// 已修复：将原始 HTML 文件转换为有效的 React (TSX) 组件，避免在 `index.tsx` 被当作 TypeScript/JSX 处理时出现解析错误。
+// 说明：如果你想直接用静态 HTML，请把文件保存为 `.html` 而不是 `.tsx`。
+
+import React from "react";
+
+/**
+ * XiaoXiongProfile 组件
+ * 用法示例：在你的 React/Next.js 项目中 import XiaoXiongProfile from './XiaoXiongProfile';
+ * 确保头像文件放在 public 或静态目录下，路径为 /Camera_1040g3k031o7oo7u7lm605pt4esi2nv2l5lajmco.jpg
+ */
 export default function XiaoXiongProfile(): JSX.Element {
   return (
     <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: 32, background: "linear-gradient(135deg,#ffffff 0%,#f0f9f4 50%,#ecfdf5 100%)" }}>
@@ -53,3 +63,22 @@ export default function XiaoXiongProfile(): JSX.Element {
     </div>
   );
 }
+
+
+/*
+  附：简单的单元测试示例（可另存为 XiaoXiongProfile.test.tsx）
+  需要安装 @testing-library/react 与 jest 等测试库。
+
+  import { render, screen } from '@testing-library/react';
+  import XiaoXiongProfile from './XiaoXiongProfile';
+
+  test('renders name and tagline', () => {
+    render(<XiaoXiongProfile />);
+    expect(screen.getByText(/你好，我是熊。/i)).toBeInTheDocument();
+    expect(screen.getByText(/小熊必出心平气和！/i)).toBeInTheDocument();
+  });
+
+  （提示）如果你确实需要原始 HTML 文件，请告诉我，我会把它保存为 .html。同时：
+  - 错误原因：构建器/运行时把该文件当作 TypeScript/TSX 解析，而文件首字符是 '<'，导致 Unexpected token。
+  - 解决方法：把文件扩展名改为 .html，或把内容改为合法的 JSX/TSX（如本组件）。
+*/
